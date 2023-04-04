@@ -39,6 +39,8 @@ class BankAccount:
     def print_all(cls):
         all = ""
         for index in cls.accounts:
+            all += f"{index.balance}"
+            all += "\n"
             all += index.first_name + " " + index.last_name
             all += "\n"
         return all
