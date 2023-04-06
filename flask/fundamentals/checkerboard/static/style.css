@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+td{
+    width: 50px;
+    height: 50px;
+    /* background-color: aqua; */
+}
+
+
+table{
+    margin-top: 100px;
+}
