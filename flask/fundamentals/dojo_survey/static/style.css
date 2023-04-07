@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 50px;
+    margin: 50px;
+    background-color: burlywood;
+    padding: 20px;
+    border: solid black 2px;
+}
+
+.comments{
+    display: flex;
+    gap: 10px;
+}
+
+.result{
+    background-color: burlywood;
+    margin-top: 100px;
+    font-size: larger;
+    padding: 40px;
+    border: solid black 2px;
+}
+
+.result p{
+    margin-bottom: 50px;
+}

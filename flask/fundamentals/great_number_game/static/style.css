@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px
+}
+
+div{
+    width: 200px;
+    height: 200px;
+}
+
+.text{
+    font-size: larger;
+    display: flex;
+    margin-left: 65px;
+    align-items: center;
+}
+
+.high{
+    background-color: aqua;
+}
+.low{
+    background-color:gold;
+}
+.correct{
+    background-color: chartreuse;
+}
