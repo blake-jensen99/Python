@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 100px;
+}
+
+.topR a{
+    text-decoration: none;
+    background-color: aqua;
+    padding: 5px;
+    color: black;
+    border: 1px solid black;
+    box-shadow: 2px 2px black;
+}
+
+
+.top{
+    display: flex;
+    gap: 20px;
+}
+
+.top p{
+    border: 1px solid black;
+    width: 75px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 100px;
+    gap: 20px;
+}
+
+form{
+    flex: 1;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+}
+
+button{
+    background-color: rgb(247, 230, 0);
+    padding: 5px;
+    color: black;
+    border: 1px solid black;
+    box-shadow: 2px 2px black;
+}
+
+footer{
+    margin: 50px 100px;
+    border: 1px solid black;
+    height: 75px;
+    overflow-y: scroll;
+}

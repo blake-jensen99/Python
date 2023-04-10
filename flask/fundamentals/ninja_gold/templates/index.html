@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Gold</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav>
+        <div class="top">
+            <label for="gold">Your Gold:</label>
+            <p>{{session['x']}}</p>
+        </div>
+        <div class="topR">
+            <a href="/clear">Restart!</a>
+        </div>
+    </nav>
+    <main>
+        <form action="/process_money" method="post">
+            <h3>Farm</h3>
+            <p>(earns 10-20 gold)</p>
+            <button type="submit">Find Gold!</button>
+            <input type="hidden" name="form" value="farm">
+        </form>
+        <form action="/process_money" method="post">
+            <h3>Cave</h3>
+            <p>(earns 5-10 gold)</p>
+            <button type="submit">Find Gold!</button>
+            <input type="hidden" name="form" value="cave">
+        </form>
+        <form action="/process_money" method="post">
+            <h3>House</h3>
+            <p>(earns 2-5 gold)</p>
+            <button type="submit">Find Gold!</button>
+            <input type="hidden" name="form" value="house">
+        </form>
+        <form action="/process_money" method="post">
+            <h3>Casino</h3>
+            <p>(earns/takes 0-50 gold)</p>
+            <button type="submit">Find Gold!</button>
+            <input type="hidden" name="form" value="casino">
+        </form>
+    </main>
+    <footer>
+        {% for i in range(session['message']|length,0,-1) %}
+        <p>{{session['message'][i]|safe}}</p>
+        {% endfor %}
+    </footer>
+</body>
+
+</html>
