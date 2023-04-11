@@ -1,0 +1,14 @@
+select * from names
+
+INSERT INTO `names`.`names` (`name`, `created_at`, `updated_at`) VALUES ('Blake', Now(), Now());
+
+
+INSERT INTO `names`.`names` (`name`, `created_at`, `updated_at`) 
+VALUES
+	('John', Now(), Now()),
+	('Jane', Now(), Now())
+
+
+UPDATE `names`.`names` SET `name` = 'Dan' WHERE (`id` = '2');
+
+DELETE FROM `names`.`names` WHERE (`id` = '2');

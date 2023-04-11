@@ -1,0 +1,49 @@
+INSERT INTO `dojo_and_ninjas`.`dojos` (`name`, `created_at`, `updated_at`) 
+VALUES
+	('A Dojo', Now(), Now()),
+	('The Dojo', Now(), Now()),
+	('That Dojo', Now(), Now())
+
+
+Delete From dojos
+
+
+INSERT INTO `dojo_and_ninjas`.`dojos` (`name`, `created_at`, `updated_at`) 
+VALUES
+	('A New Dojo', Now(), Now()),
+	('The New Dojo', Now(), Now()),
+	('That New Dojo', Now(), Now())
+
+
+INSERT INTO `dojo_and_ninjas`.`ninjas` (`first_name`, `last_name`, `age`, `dojo_id`, `created_at`, `updated_at`) 
+VALUES
+	('John', 'Doe', 18, 1, Now(), Now()),
+	('Jane', 'Doe', 26, 1, Now(), Now()),
+	('Blake', 'Jensen', 14, 1, Now(), Now())
+
+
+INSERT INTO `dojo_and_ninjas`.`ninjas` (`first_name`, `last_name`, `age`, `dojo_id`, `created_at`, `updated_at`) 
+VALUES
+	('Billy', 'Bob', 10, 2, Now(), Now()),
+	('Jimmy', 'John', 23, 2, Now(), Now()),
+	('Timmy', 'Tod', 34, 2, Now(), Now())
+
+
+INSERT INTO `dojo_and_ninjas`.`ninjas` (`first_name`, `last_name`, `age`, `dojo_id`, `created_at`, `updated_at`) 
+VALUES
+	('Reggie', 'Reginald', 45, 3, Now(), Now()),
+	("Ol'Billy", 'Babyface', 6, 3, Now(), Now()),
+	('Thomas', 'Rex', 101, 3, Now(), Now())
+
+
+SELECT * FROM ninjas
+WHERE dojo_id = 1
+
+
+SELECT * FROM ninjas
+WHERE dojo_id = 3
+
+
+SELECT dojo_id FROM ninjas
+ORDER BY id DESC
+LIMIT 1
