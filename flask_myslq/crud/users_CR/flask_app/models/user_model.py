@@ -1,7 +1,8 @@
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
+
+from flask_app import DB
 # model the class after the friend table from our database
 class User:
-    DB = 'users'
     def __init__( self , data ):
         self.id = data['id']
         self.first_name = data['first_name']
@@ -15,7 +16,7 @@ class User:
     def get_all(cls):
         query = "SELECT * FROM users;"
         # make sure to call the connectToMySQL function with the schema you are targeting.
-        results = connectToMySQL('users').query_db(query)
+        results = connectToMySQL(DB).query_db(query)
         # Create an empty list to append our instances of users
         users = []
         # Iterate over the db results and create instances of users with cls.
@@ -29,7 +30,7 @@ class User:
     def get_one(cls, id):
             query = "SELECT * FROM users WHERE id = %(id)s"
             data = {'id':id}
-            results = connectToMySQL(cls.DB).query_db(query, data)
+            results = connectToMySQL(DB).query_db(query, data)
             return cls(results[0])
 
 
@@ -39,7 +40,7 @@ class User:
     def save(cls, data ):
         query = "INSERT INTO users ( first_name , last_name , email , created_at, updated_at ) VALUES ( %(fname)s , %(lname)s , %(email)s , NOW() , NOW() );"
         # data is a dictionary that will be passed into the save method from server.py
-        return connectToMySQL('users').query_db( query, data )
+        return connectToMySQL(DB).query_db( query, data )
     
 
 
@@ -49,11 +50,11 @@ class User:
                 SET first_name=%(fname)s,last_name=%(lname)s,email=%(email)s 
                 WHERE id = %(id)s;"""
         
-        connectToMySQL('users').query_db(query,data)
+        connectToMySQL(DB).query_db(query,data)
 
 
     @classmethod
     def delete(cls,id):
         data = {'id':id}
         query = "DELETE FROM users WHERE id = %(id)s"
-        connectToMySQL('users').query_db(query,data)
+        connectToMySQL(DB).query_db(query,data)
