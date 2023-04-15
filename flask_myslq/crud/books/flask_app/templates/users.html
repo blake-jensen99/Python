@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>All User</h1>
+    <a href="/books">Books</a>
+    <h3>New User:</h3>
+    <form action="/create_user" method="POST">
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname">
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname">
+        <input type="submit" value="Add user">
+    </form>
+
+
+
+    {% for user in all_users %}
+    <a href="/users/{{user.id}}">{{user.first_name}} {{user.last_name}}</a>
+
+    <hr>
+    {% endfor %}
+</body>
+</html>

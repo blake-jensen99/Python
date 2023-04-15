@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Book</title>
+</head>
+<body>
+    <h1>{{book.title}}</h1>
+    <a href="/">Home</a>
+    <h3>New User:</h3>
+    <form action="/add_user" method="POST">
+        <select name="user_id" id="user">
+            <option disabled selected>Pick one...</option>
+            {% for users in user %}
+                <option value="{{users.id}}">{{users.first_name}} {{users.last_name}}</option>
+            {% endfor %}
+        </select>
+        <input type="hidden" name="book_id" value={{book.id}}>
+        <button type="submit">Submit</button>
+    </form>
+
+
+    
+    <h3>Users:</h3>
+    {% for users in book.users %}
+    <p>{{users.first_name}}</p>
+    <p>{{users.last_name}}</p>
+    <hr>
+    {% endfor %}
+</body>
+</html>
